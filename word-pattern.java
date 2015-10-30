@@ -14,9 +14,10 @@ public class Solution {
         int start = 0; // start of a word
         int index = 0; // index of character in pattern
         HashMap<Character, String> hashMap = new HashMap<Character, String>();
-        String substring = "";
+        String substring = ""; // substring of str which acts as a value in the hash map
         
-        // extract pairs of keys and values 
+        // extract pairs of keys and values, and put them in the hash map
+        // also return answer (if possible) 
         for (int i = start; i < str.length(); ++i) {
             if (str.charAt(i) == 32 || i == str.length() - 1) {
                 if (str.charAt(i) == 32) substring = str.substring(start, i);
