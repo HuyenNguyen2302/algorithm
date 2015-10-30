@@ -24,7 +24,7 @@ public class Solution {
                 if (i == str.length() - 1) substring = str.substring(start);
                 System.out.println("index = " + index);
                 if (index >= pattern.length()) return false;
-                if (!hashFunction(pattern.charAt(index), substring, hashMap))
+                if (!hash(pattern.charAt(index), substring, hashMap))
                     return false;
                 start = i + 1;
                 ++index;
@@ -35,7 +35,7 @@ public class Solution {
         else return true;
     }
     
-    public boolean hashFunction(char key, String value, HashMap<Character, String> hashMap) {
+    private boolean hash(char key, String value, HashMap<Character, String> hashMap) {
         // Case 1: value is already in the hash map
         if (hashMap.containsValue(value)) {
             for (Character k : hashMap.keySet()) { // find the key which maps to the given value
